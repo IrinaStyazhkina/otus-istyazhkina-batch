@@ -1,0 +1,31 @@
+spring:
+  batch:
+    job:
+      enabled: false
+  data:
+    mongodb:
+      database: library
+      port: 0
+      host: localhost
+      authentication-database: none
+  datasource:
+    url: jdbc:h2:mem:testdb
+    initialization-mode: always
+    schema: schema.sql
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+  shell:
+    interactive:
+      enabled: false
+
+mongock:
+  runner-type: "InitializingBean"
+  change-logs-scan-package:
+    - ru.otus.istyazhkina.library.changelogs.test
+h2:
+  console:
+    path: /h2-console
+    settings:
+      web-allow-others: true
